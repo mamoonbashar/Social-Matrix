@@ -1,0 +1,326 @@
+@import url("./variable.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  background-color: var(--light-gray);
+}
+h3 {
+  font-size: var(--Heading-size);
+  color: var(--charcoal-black);
+}
+p {
+  font-size: var(--content-size);
+  color: var(--charcoal-black);
+  font-weight: 500;
+}
+h4 {
+  font-size: var(--sub-heading);
+  color: var(--charcoal-black);
+}
+i {
+  color: var(--charcoal-black);
+}
+span {
+  color: var(--primary-blue);
+}
+
+.userDashboard {
+  width: 40%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 10px;
+}
+.userDashboard_activityFeed {
+  height: 300px;
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: flex-start;
+}
+.HeadingContainer {
+}
+.HeadingContainer h3 {
+}
+.HeadingContainer p {
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+.activityFeedAndPostContainer {
+  width: 90%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.HeadingForYouridea {
+  width: 90%;
+  height: auto;
+}
+.activityFeed_TextArea {
+  height: 80px;
+  /* border: 1px solid; */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.activityFeed__DPContainer {
+  /* height: 40px; */
+  width: 10%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.activityFeed__DPContainer img {width: 100%;height: 100%;border-radius: 50%;object-fit: cover;}
+.activityFeed_WritingArea {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.textAreaContainer {
+  height: 65px;
+  width: 100%;
+  font-size: var(--content-size);
+}
+.activityFeed_WritingArea textarea::placeholder {
+  color: var(--secondary-text-gray);
+  font-weight: 300;
+}
+.activityFeed_WritingArea textarea {
+  height: 50px;
+  width: 83%;
+  padding: 5px;
+  outline: none;
+  font-size: var(--content-size);
+  color: var(--charcoal-black);
+  font-weight: 500;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+}
+
+.activityFeed_otherUsersPost {
+  width: 100%;
+  height: 150px;
+  /* padding: 3px; */
+  /* border: 1px solid; */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.otherUsersPost_container {
+  width: 100%;
+  height: 50px;
+  /* border: 1px solid; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.DP_Circle {
+  width: 7%;
+  /* height: 30px; */
+  aspect-ratio: 1 / 1;
+  border-radius: 50%; /* ← use % instead of px */
+  overflow: hidden; /* ← hide overflow to crop image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.DP_Circle img {
+  width: 100%;
+  height: 100%; /* ← add this */
+  object-fit: cover;
+  border-radius: 50%;
+}
+.NameAndBlog {
+  /* border: 1px solid; */
+  width: 90%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px;
+}
+.userDashboard_Blog {
+  height: 300px;
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px;
+  align-items: flex-start;
+}
+.HeadingContainer {
+  width: 90%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.BlogContainer {
+  height: 250px;
+  width: 90%;
+  padding: 10px;
+}
+.mainBlogSection {
+  width: 100%;
+  /* border: 1px solid; */
+  height: 250px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.blogAndBlogData {
+  /* border: 1px solid; */
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.blog1 {
+  width: 15%;
+  height: 70px;
+  /* border: 1px solid; */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.blogData {
+  width: 80%;
+  height: 50px;
+  /* border: 1px solid; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.blogData p {
+  color: var(--secondary-text-gray);
+  font-weight: 500;
+}
+
+.completeYourProfile {
+  /* border: 1px solid; */
+  width: 30%;
+  height: 250px;
+  border-radius: 30px;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+}
+.completeYourProfile_Heading {
+  /* border: 1px solid; */
+  height: 40px;
+  width: 100%;
+}
+.completeYourProfile_DPHeadingContainer {
+  /* border: 1px solid; */
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+}
+.DP_circle {
+  align-items: center;
+  width: 60px;
+  /* height: 20px; */
+  aspect-ratio: 1/1;
+  /* height: 65px; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+.DP_circle img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+.Name_container {
+}
+.FieldsContainer {
+  /* border: 1px solid; */
+  height: 100px;
+  width: 100%;
+}
+.CompletedFieldsContainer {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.FieldName {
+  width: 50%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.FieldName p {
+  font-size: var(--content-size);
+  color: var(--charcoal-black);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.NumberOfFields {
+  width: 50%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+.NumberOfFields p {
+  color: var(--secondary-text-gray);
+}

@@ -1,0 +1,435 @@
+/* Main container */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  height: auto;
+  width: 100%;
+  display: flex;
+  background: var(--white);
+}
+
+.membersFilterContainers {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px;
+  background-color: var(--light-gray);
+}
+
+.membersContainer {
+  height: auto;
+  width: 70%;
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.memberHeadingContainer {
+  width: 30%;
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 5px;
+}
+
+.memberHeadingContainer h4 {
+  font-size: var(--Heading-size);
+  color: var(--charcoal-black);
+}
+
+/* Navigation Bar */
+.navigationBar {
+  width: 100%;
+  height: 30px;
+}
+.navigationbtn {
+  height: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  list-style: none;
+  padding-left: 5px;
+}
+.navigationbtn li {
+  font-size: var(--sub-heading);
+  color: var(--secondary-text-gray);
+  font-weight: 500;
+}
+.underLine {
+  height: 2px;
+  width: auto;
+  background-color: var(--orange-accent);
+}
+/* Member Count Container */
+.memberCountContainer {
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Members Count */
+.membersCount {
+  width: 20%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--sub-heading);
+  color: var(--secondary-text-gray);
+  font-weight: 500;
+}
+
+/* Recently Active Container */
+.recentlyActiveContainer {
+  width: 30%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.recentlyActiveContainer p {
+  font-size: var(--sub-heading);
+  color: var(--secondary-text-gray);
+  font-weight: 500;
+}
+
+/* Member Cards Container */
+.memberCardsContainer {
+  width: 100%;
+  height: 100%;
+  border: 1px solid;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Card */
+.Card {
+  width: 230px;
+  height: 350px;
+  /* border: 1px solid; */
+  border: var(--borderDivider);
+  border-radius: 5px;
+  /* padding: 5px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth effect */
+}
+.Card:hover {
+  transform: translateY(-10px) scale(1.05); /* move up & scale */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* optional shadow for effect */
+}
+/* DP Container */
+.dpContainer {
+  width: 230px;
+  height: 150px;
+  border: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* DP Circle */
+.dpCircle {
+  width: 100px;
+  border: 1px solid;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+/* User Name Container */
+.userNameContainer {
+  height: 30px;
+  width: 100px;
+  border: solid;
+  position: relative;
+  bottom: 15px;
+}
+
+/* User Info Container */
+.userInfoContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.userInfoContainer p {
+  font-size: var(--sub-heading);
+  color: var(--secondary-text-gray);
+  font-weight: 500;
+}
+
+/* Send Message */
+.sendMessage {
+  height: 30px;
+  width: 90%;
+  border: var(--borderDivider);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+/* Buttons Container */
+.buttonsContainer {
+  border: 1px solid;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Stop Following Button */
+.StopFollowing {
+  width: 50%;
+  height: 40px;
+  border: var(--borderDivider);
+}
+
+/* Connect Button */
+.connect {
+  width: 50%;
+  height: 40px;
+  border: var(--borderDivider);
+}
+
+/* Members Groups Filter Container */
+.members-groups-filter-container {
+  width: 30%;
+  height: 100%;
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Filter Card */
+.filterCard {
+  width: 80%;
+  height: 300px;
+  border: 1px solid;
+  padding: 5px;
+  display: flex;
+  flex-direction: column; /* gap: 10px; */
+  background-color: var(--white);
+  border-radius: 10px;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+/* Heading Container */
+.headingContainer {
+  width: 100%;
+  height: 30px; /* font-size: var(--Heading-size); */
+}
+
+.headingContainer h4 {
+  font-weight: 700;
+  font-size: var(--Heading-size);
+  color: var(--charcoal-black);
+}
+
+/* Name Input Container */
+.nameInputContainer {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nameInputContainer p {
+  font-size: var(--sub-heading);
+  color: var(--charcoal-black);
+  font-weight: 500;
+}
+
+.nameInputContainer input {
+  width: 90%;
+  height: 30px;
+  outline: none;
+  border: var(--borderDivider);
+  border-radius: 5px;
+  align-self: center;
+}
+
+.nameInputContainer input[type="text"] {
+  /* height: 30px; */
+}
+
+/* Search Container */
+.SearchContainer {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Search Button */
+.Search {
+  width: 90%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  font-weight: 700;
+  transition: scaleX(0.1);
+}
+
+/* Members Card */
+.membersCard {
+  width: 80%;
+  height: 400px;
+  border: 1px solid;
+  padding: 5px;
+  display: flex;
+  flex-direction: column; /* gap: 10px; */
+  background-color: var(--white);
+  border-radius: 10px;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+/* Navigation Options */
+.navigationOptions {
+  width: 90%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navigationOptions p {
+  font-size: var(--sub-heading);
+  color: var(--secondary-text-gray);
+}
+
+/* Members Container */
+.members-container {
+  width: 90%;
+  height: 200px;
+  border: 1px solid;
+  scroll-behavior: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Member Bar */
+.memberbar {
+  width: 100%;
+  height: 40px;
+  border: 1px solid;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Circle */
+.circle {
+  border: 1px solid;
+  width: 15%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+/* User Name */
+.userName {
+  width: 80%;
+  height: 40px;
+  border: 1px solid;
+}
+
+/* View All */
+.viewAll {
+  height: 30px;
+  width: 30%;
+  background-color: var(--subtle-blue-tint);
+  color: var(--charcoal-black);
+  border-radius: 5px;
+  font-size: var(--sub-heading);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+  }
+
+  .membersFilterContainers {
+  }
+
+  .membersContainer {
+  }
+
+  .Card {
+  }
+
+  .members-groups-filter-container {
+  }
+
+  .filterCard {
+  }
+
+  .membersCard {
+  }
+}
+
+@media (max-width: 480px) {
+  .memberHeadingContainer h4 {
+  }
+
+  .userInfoContainer p {
+  }
+
+  .buttonsContainer {
+  }
+
+  .StopFollowing,
+  .connect {
+  }
+
+  .nameInputContainer input {
+  }
+}

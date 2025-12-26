@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/CSS/message.css" />
+    <title>message</title>
+  </head>
+  <body>
+    <%-include('partials/navbar.ejs')%>
+    <main>
+      <%-include('partials/sidebar.ejs')%>
+      <!-- Master Container Contains all three section Message Chats  Info -->
+      <section class="masterContainer">
+        <!-- First Container inside master container -->
+
+        <section class="contactsContainer">
+          <!--  Container For Search Icon and Heading -->
+          <section class="contactSearchContainer">
+            <section class="messageHeadingContainer">
+              <h3>Messages</h3>
+            </section>
+            <section class="searchIconContainer">
+              <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+            </section>
+          </section>
+          <!-- Container to show text who is Online -->
+          <section class="onlineNow">
+            <p>online Now</p>
+            <p>See All</p>
+          </section>
+          <!-- Container To show online users Wtih DP -->
+          <section class="dpContainer">
+            <section class="dpCircles">
+              <img src="/assets/UsersImage/happy-in-life.webp" />
+            </section>
+            <section class="dpCircles">
+              <img src="/assets/UsersImage/images.jpeg" />
+            </section>
+            <section class="dpCircles">
+              <img src="/assets/UsersImage/pexels-photo-774909.jpeg" />
+            </section>
+          </section>
+
+          <!-- Container to Show Pinned Message -->
+          <section class="pinnedMessage">
+            <i class="fa-solid fa-thumbtack fa-sm" style="color: #9e9e9e"></i>
+            <p>Pinned Message</p>
+          </section>
+
+          <!-- Contacts Container For messaging -->
+          <section class="contactContainer">
+            <section class="userNameDPContainer">
+              <section class="userDp">
+                <img src="/assets/UsersImage/download.jpeg" />
+              </section>
+              <section class="userNameContainer">
+                <section class="userName">
+                  <h4>Venessa</h4>
+                  <p>date</p>
+                </section>
+                <section class="previewMessage"><p>Preview Message</p></section>
+              </section>
+            </section>
+            <section class="userNameDPContainer">
+              <section class="userDp">
+                <img src="/assets/UsersImage/happy-in-life.webp" />
+              </section>
+              <section class="userNameContainer">
+                <section class="userName">
+                  <h4>John</h4>
+                  <p>date</p>
+                </section>
+                <section class="previewMessage"><p>Preview Message</p></section>
+              </section>
+            </section>
+            <section class="userNameDPContainer">
+              <section class="userDp">
+                <img
+                  src="/assets/UsersImage/happy-young-man-sitting-home-260nw-2248472067.webp"
+                />
+              </section>
+              <section class="userNameContainer">
+                <section class="userName">
+                  <h4>Mark</h4>
+                  <p>date</p>
+                </section>
+                <section class="previewMessage"><p>Preview Message</p></section>
+              </section>
+            </section>
+            <section class="userNameDPContainer">
+              <section class="userDp">
+                <img src="/assets/UsersImage/GroupImage.jpeg" />
+              </section>
+              <section class="userNameContainer">
+                <section class="userName">
+                  <h4>Tom Walker</h4>
+                  <p>date</p>
+                </section>
+                <section class="previewMessage"><p>Preview Message</p></section>
+              </section>
+            </section>
+            <section class="userNameDPContainer">
+              <section class="userDp">
+                <img src="/assets/UsersImage/images.jpeg" />
+              </section>
+              <section class="userNameContainer">
+                <section class="userName">
+                  <h4>Ethan</h4>
+                  <p>date</p>
+                </section>
+                <section class="previewMessage"><p>Preview Message</p></section>
+              </section>
+            </section>
+          </section>
+        </section>
+
+        <!-- Chats Container it Containes  user name and chats  -->
+        <!-- Second Container inside master contaner -->
+        <section class="chatsContainer">
+          <section class="userNameCallingContainer">
+            <!-- Dp and Name Container -->
+            <section class="DpUserNameCotainer">
+              <section class="DpContainer">
+                <img src="/assets/UsersImage/pexels-photo-774909.jpeg" />
+              </section>
+              <section class="UserName">
+                <h4>Kal el</h4>
+                <p>date</p>
+              </section>
+            </section>
+            <!-- Icons Container for call -->
+            <section class="callingIconsContainer">
+              <i class="fa-solid fa-video fa-lg" style="color: #9e9e9e"></i
+              ><i class="fa-solid fa-phone fa-lg" style="color: #9e9e9e"></i
+              ><i
+                class="fa-solid fa-ellipsis-vertical fa-lg"
+                style="color: #9e9e9e"
+              ></i>
+            </section>
+          </section>
+
+          <!-- chats Message Container -->
+          <section class="messageContainer">
+            <!-- left Side message display -->
+            <section class="leftSideMessageContainer">
+              <section class="dpNameContainer">
+                <img
+                  src="/assets/UsersImage/young-bearded-man-with-striped-shirt_273609-5677.avif"
+                />
+              </section>
+              <section class="textMessageContainer">
+                <section class="senderNameContainer">
+                  <h4>John</h4>
+                  <p>Timing</p>
+                </section>
+                <section class="senderText"><h4>Hello tom</h4></section>
+              </section>
+            </section>
+            <!-- right Side message display -->
+            <section class="rightMessageContainer">
+              <section class="dpNameContainer">
+                <img src="/assets/UsersImage/download.jpeg" />
+              </section>
+              <section class="textMessageContainer">
+                <section class="senderNameContainer">
+                  <h4>John</h4>
+                  <p>Timing</p>
+                </section>
+                <section class="senderText"><h4>Hello tom</h4></section>
+              </section>
+            </section>
+          </section>
+
+          <!-- user will write messsage in this area and send it  -->
+          <section class="messageWrittingContainer">
+            <section class="messageWritting">
+              <textarea name="" id=""></textarea>
+              <i
+                class="fa-regular fa-face-smile fa-lg"
+                style="color: #36454f"
+              ></i>
+              <i class="fa-solid fa-paperclip fa-lg" style="color: #36454f"></i>
+              <i
+                class="fa-regular fa-paper-plane fa-lg"
+                style="color: #007bff"
+              ></i>
+            </section>
+            <!-- <section class="emojSendDocumentContainer">
+             
+            </section> -->
+          </section>
+        </section>
+
+        <!-- Chat Info or Group Info Container -->
+        <!-- Third Container inside master contaner -->
+        <section class="contactInfoContaner">
+          <!-- this container  will show the user Name and closing contactInfoCotainer -->
+          <section class="userInfoHeadingContainer">
+            <h3>Group Info</h3>
+            <i class="fa-solid fa-xmark fa-lg" style="color: #9e9e9e"></i>
+          </section>
+          <!-- this container will show dp and name of the user -->
+          <section class="userDpNameContainer">
+            <section class="DpCircle">
+              <img src="/assets/UsersImage/GroupImage.jpeg" />
+            </section>
+            <section class="userInfoContainer">
+              <h3>Kal el</h3>
+              <p>12 Members</p>
+            </section>
+          </section>
+
+          <!-- this container will show user description-->
+          <section class="userDescriptionContainer">
+            <section class="decriptionHeading">
+              <i
+                class="fa-regular fa-clipboard fa-sm"
+                style="color: #9e9e9e"
+              ></i>
+              <p>Description</p>
+            </section>
+            <section class="Description">
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Tempora culpa earum unde natus minus quam fugiat, sequi eveniet
+                velit, dolore
+              </p>
+            </section>
+          </section>
+          <!-- this container will show copy mail id and on/off notification-->
+          <section class="copyMailIdNotifactionContainer">
+            <section class="copyMailId">
+           <i class="fa-regular fa-copy fa-sm" style="color: #007bff;"></i>
+              <p>email</p>
+            </section>
+            <section class="Notification">
+              <div class="bellIconContainer">
+                <i class="fa-regular fa-bell fa-sm" style="color: #9e9e9e;"></i>
+                <p>Notification</p>
+              </div>
+              <div class="toggleBtnContainer">
+                <section class="togglingCircle"></section>
+              </div>
+            </section>
+          </section>
+          <!-- this container will show how many photos has been send -->
+          <section class="mediaContainer">
+            <section class="mediaHeading">
+              <section class="media">
+                <i class="fa-solid fa-image fa-sm" style="color: #9e9e9e;"></i>
+                <p>Media <span>Count</span></p>
+              </section>
+              <section class="seaAll"><p>See All</p></section>
+            </section>
+            <section class="mediaPreviewContainer">
+              <section class="previewBox"><img src="" /></section>
+              <section class="previewBox"><img src="" /></section>
+              <section class="previewBox"><img src="" /></section>
+            </section>
+          </section>
+        </section>
+      </section>
+    </main>
+    <script
+      src="https://kit.fontawesome.com/5e42a819a3.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

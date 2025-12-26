@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/CSS/Sidebar.css">
+</head>
+<body>
+    <section class="sideBar" >
+      
+        <section class="sideBar_optionsContainer">
+          <section class="OpenAndClosingContainer">
+            <h3>Personal </h3><i class="fa-solid fa-chevron-right fa-lg"></i>
+          </section>
+ 
+          <a class="RoutesLink" href="/home" >
+            <section class="Options <%= currentRoute === '/home' ? 'active' : '' %>">
+              <i class="fa-solid fa-house-chimney fa-lg"></i><p>Home</p>
+            </section>
+          </a>
+          <a class="RoutesLink" href="/message">
+            <section class="Options <%= currentRoute === '/message' ? 'active' : '' %>">
+              <i class="fa-regular fa-message fa-lg"></i><p>Messages</p>
+            </section>
+          </a>
+          <a class="RoutesLink" href="/blog">
+            <section class="Options <%= currentRoute === '/blog' ? 'active' : '' %>">
+              <i class="fa-solid fa-blog fa-lg"></i><p>Blog</p>
+            </section>
+          </a>
+        </section>
+      </section>
+      <script
+      src="https://kit.fontawesome.com/5e42a819a3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/JS/Sidebar.js"></script>
+</body>
+</html>

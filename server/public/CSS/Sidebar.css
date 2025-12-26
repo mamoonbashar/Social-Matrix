@@ -1,0 +1,87 @@
+@import url("./variable.css");
+.sideBar {
+  height: 100vh;
+  display: flex;
+  width: 20%;
+  flex-direction: column;
+  background-color: var(--white);
+  border-top-right-radius: 30px;
+  box-shadow: var(--shadow);
+  padding: 5px;
+  position: relative;
+  transition: all 0.6s ease-in-out;
+  /* z-index: 999; */
+  /* margin: 0; */
+}
+.minimiseSidebar {
+  width: 70px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--white);
+  border-top-right-radius: 30px;
+  box-shadow: var(--shadow);
+  padding: 5px;
+  position: relative;
+  transition: all 0.6s ease-in-out;
+}
+.minimiseSidebar h3,
+.minimiseSidebar p {
+  display: none;
+}
+
+.sideBar_optionsContainer {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 5px;
+}
+.OpenAndClosingContainer {
+  width: 90%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.OpenAndClosingContainer i {
+  transition: transform 0.6s ease;
+}
+
+.rotated {
+  transition: transform 0.6s;
+  transform: rotate(180deg);
+}
+.Options {
+  width: 70%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  font-weight: 500;
+  gap: 10px;
+  align-items: center;
+  color: var(--charcoal-black);
+  font-size: var(--sub-heading);
+  transition: all 0.3s;
+  padding-left: 20px;
+  border-radius: 10px;
+}
+.Options:hover {
+  background-color: var(--subtle-blue-tint);
+  border-radius: var(--radius);
+  border-radius: 10px;
+}
+.Options.active{
+  background-color:var(--primary-blue);
+}
+.RoutesLink {
+  width: 70%;
+  height: 40px;
+  text-decoration: none;
+}

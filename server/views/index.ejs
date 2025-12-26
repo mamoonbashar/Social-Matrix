@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khatt</title>
+    <link rel="stylesheet" href="/CSS/index.css" />
+  </head>
+  <body>
+    <section class="background-illustration">
+      <img src="/images/e1cb7037-3743-4122-9487-10f8a96db6c1.jpg" alt="logo" />
+    </section>
+    <main>
+      <div class="WebsiteNameContainer">
+        <h1>Khatt</h1>
+        <div class="logoContainer">
+          <img src="/images/150897750_10507049.png" alt="logo" />
+        </div>
+      </div>
+      <section class="LoginCard">
+        <div class="ImageContainer"></div>
+        <div class="textContainer">
+          <h1>Online Communities</h1>
+          <p>
+            We will create a demo sandbox just for you. Feel free to explore and
+            play around, don’t worry about breaking anything. Your sandbox will
+            automatically reset after 30 minutes.
+          </p>
+        </div>
+        <div class="RegisterBtn">
+          <a class="registerNow" id="Register-now">Register Now</a>
+          <a class="registerNow" id="Login-now">Login Now</a>
+        </div>
+      </section>
+      <section class="RegisterCard">
+        <div class="IconContainer">
+          <div class="icon">
+            <img src="/images/icons/register_icon.webp" />
+          </div>
+          <div class="TextContainer">
+            <h1>Create Account</h1>
+            <p>
+              Enter your email address below to recieve a temporary account for
+              your own Khatt Account
+            </p>
+          </div>
+        </div>
+        <form action="/user/register" method="POST" class="FormContainer">
+          <div class="InputContainer">
+            <input
+              type="text"
+              name="fullname"
+              placeholder="Enter Your Full Name"
+            />
+            <input type="text" name="email" placeholder="Enter Your Email" />
+            <input
+              type="text"
+              name="contact"
+              placeholder="Enter Your Phone Number"
+            />
+            <input
+              type="text"
+              name="password"
+              placeholder="Enter Your Password"
+            />
+          </div>
+          <div class="CreateAccountBtn">
+            <button type="submit">Create Account</button>
+          </div>
+        </form>
+
+        <div class="PrivacyPolicy">
+          <p>
+            By creating a demo, you agree to our Terms of
+            <span> Service</span> & <span>Privacy Policy.</span> We will use
+            your information to create a demo account for you and to send you
+            resources and content relevant to you.
+          </p>
+        </div>
+      </section>
+      <section class="LoginSection" style="display: flex">
+        <div class="IconContainer">
+          <div class="icon">
+            <img src="/images/icons/register_icon.webp" />
+          </div>
+          <div class="TextContainer">
+            <h1>Login In Your Account</h1>
+            <p>Enter Email to login in your Account</p>
+          </div>
+        </div>
+        <form action="/user/login" class="FormContainer" method="post">
+          <div class="InputContainer">
+            <input type="text" name="email" placeholder="Enter Your Email" />
+            <input
+              type="text"
+              name="password"
+              placeholder="Enter Your Password"
+            />
+          </div>
+          <div class="CreateAccountBtn">
+            <button type="submit">Login</button>
+          </div>
+        </form>
+
+        <div class="PrivacyPolicy">
+          <p>
+            By creating a demo, you agree to our Terms of
+            <span> Service</span> &amp; <span>Privacy Policy.</span> We will use
+            your information to create a demo account for you and to send you
+            resources and content relevant to you.
+          </p>
+        </div>
+      </section>
+      <% if (success) { %>
+      <div style="color: green">✅ User created successfully!</div>
+      <% } %> <% if (error) { %>
+      <div style="color: red"><%= error %></div>
+      <% } %>
+    </main>
+    <script src="/JS/index.js"></script>
+  </body>
+</html>

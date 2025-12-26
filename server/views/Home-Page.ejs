@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home-page</title>
+    <link rel="stylesheet" href="/CSS/Home-Page.css" />
+  </head>
+  <body>
+    <%- include('partials/navbar.ejs') %>
+
+    <main>
+      <%- include('partials/sidebar.ejs') %>
+      <!-- complete dashboard layout needs to be fixed -->
+      <section class="userDashboard">
+        <section class="userDashboard_activityFeed">
+          <section class="HeadingContainer">
+            <h3>Activity Feed</h3>
+            <p>View All</p>
+          </section>
+          <section class="activityFeedAndPostContainer">
+            <section class="activityFeed_TextArea">
+              <section class="activityFeed__DPContainer">
+                <img src="/assets/UsersImage/960x0.webp" alt="profile" />
+              </section>
+              <section class="activityFeed_WritingArea">
+                <section class="HeadingForYouridea">
+                  <p><span>You</span> thought heading</p>
+                </section>
+                <section class="textAreaContainer">
+                  <textarea name="blogData" placeholder="Share Your Blog">
+                  </textarea>
+                </section>
+              </section>
+            </section>
+            <!-- activityFeed_otherUsersPost scrolling wuld be applied to this section -->
+            <section class="activityFeed_otherUsersPost">
+              <section class="otherUsersPost_container">
+                <section class="DP_Circle">
+                  <img src="/assets/UsersImage/960x0.webp"  /></section>
+                <section class="NameAndBlog">
+                  <p><span>John</span> written something</p>
+                </section>
+              </section>
+            </section>
+          </section>
+        </section>
+        <section class="userDashboard_Blog">
+          <section class="HeadingContainer">
+            <h3>Blog</h3>
+            <p>View All</p>
+          </section>
+          <section class="BlogContainer">
+            <!-- mainBlogSection scrolling will be added here  -->
+            <section class="mainBlogSection">
+              <section class="blogAndBlogData">
+                <div class="blog1"><h4>BLOG</h4></div>
+                <div class="blogData">
+                  <h4>Tackle Your closest Spring cleaning</h4>
+                  <p>May 14,2025</p>
+                </div>
+              </section>
+              <section class="blogAndBlogData">
+                <div class="blog1"><h4>BLOG</h4></div>
+                <div class="blogData">
+                  <h4>Tackle Your closest Spring cleaning</h4>
+                  <p>May 14,2025</p>
+                </div>
+              </section>
+              <section class="blogAndBlogData">
+                <div class="blog1"><h4>BLOG</h4></div>
+                <div class="blogData">
+                  <h4>Tackle Your closest Spring cleaning</h4>
+                  <p>May 14,2025</p>
+                </div>
+              </section>
+            </section>
+          </section>
+        </section>
+      </section>
+
+      <section class="completeYourProfile">
+        <section class="completeYourProfile_Heading">
+          <h3>Complete Your Profile</h3>
+        </section>
+        <section class="completeYourProfile_DPHeadingContainer">
+          <section class="DP_circle">
+            <img src="/assets/UsersImage/young-bearded-man-with-striped-shirt_273609-5677.avif" alt="dp" ></section>
+          <section class="Name_container">
+            <h4>Complete</h4>
+            <p>Name</p>
+          </section>
+        </section>
+        <section class="FieldsContainer">
+          <section class="CompletedFieldsContainer">
+            <section class="FieldName">
+              <p>
+                <i
+                  class="fa-solid fa-circle-check fa-lg"
+                  style="color: #28a745"
+                  ;
+                ></i
+                >General Information
+              </p>
+              <p>
+                <i
+                  class="fa-solid fa-circle-check fa-lg"
+                  style="color: #28a745"
+                  ;
+                ></i>
+                work Experience
+              </p>
+              <p>
+                <i
+                  class="fa-solid fa-circle-check fa-lg"
+                  style="color: #28a745"
+                  ;
+                ></i>
+                Profile Photo
+              </p>
+              <p>
+                <i
+                  class="fa-solid fa-circle-check fa-lg"
+                  style="color: #28a745"
+                  ;
+                ></i>
+                Cover Photo
+              </p>
+            </section>
+            <section class="NumberOfFields">
+              <p>1/1</p>
+              <p>1/1</p>
+              <p>1/1</p>
+              <p>1/1</p>
+            </section>
+          </section>
+        </section>
+      </section>
+    </main>
+    <script
+      src="https://kit.fontawesome.com/5e42a819a3.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

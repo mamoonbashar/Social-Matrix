@@ -1,0 +1,16 @@
+:root {
+  --primary-blue: #007bff; /* Electric Blue - for main highlights, buttons, active states */
+  --white: #ffffff; /* Main Background, Card Backgrounds */
+  --charcoal-black: #36454f; /* Primary Text, Icons */
+  --light-gray: #f8f9fa; /* Subtle Backgrounds, Dividers, Inactive states */
+  --subtle-blue-tint: #e6f0ff; /* Hover/Active background for elements */
+  --secondary-text-gray: #9e9e9e; /* Meta Info, Placeholder Text */
+  --orange-accent: #fd7e14; /* For specific calls to action like "Buy Now" */
+  --green-accent: #28a745; /* For completion/success icons */
+  --shadow: 15px 0 15px rgba(0, 0, 0, 0.1);
+  --content-size: 12px;
+  --Heading-size: 24px;
+  --sub-heading: 15px;
+  --borderDivider:1px solid #dee2e6;
+  
+}

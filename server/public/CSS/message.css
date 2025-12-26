@@ -1,0 +1,613 @@
+@import url("./variable.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+main {
+  width: 100vw;
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: row;
+  /* gap: 1px; */
+  background-color: var(--light-gray);
+  justify-content: normal;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+h3 {
+  font-size: var(--Heading-size);
+  /* color: var(--charcoal-black); */
+}
+p {
+  font-size: var(--content-size);
+  /* color: var(--charcoal-black); */
+  font-weight: 500;
+}
+h4 {
+  font-size: var(--sub-heading);
+  color: var(--charcoal-black);
+}
+.masterContainer {
+  width: 80%;
+  height: 100%;
+  /* border: 1px solid; */
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  /* overflow-y: hidden; */
+  box-sizing: border-box;
+}
+
+.contactsContainer {
+  height: auto;
+  width: 30%;
+  border-left: var(--borderDivider);
+  border-right: var(--borderDivider);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 8px;
+}
+
+.contactSearchContainer {
+  width: 90%;
+  height: 100px;
+  /* border: 1px solid; */
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.messageHeadingContainer {
+  width: 60%;
+  height: 100px;
+  /* border: 1px solid; */
+  color: var(--primary-blue);
+  display: flex;
+  align-items: center;
+}
+.searchIconContainer {
+  width: 40%;
+  height: 100px;
+  /* border: 1px solid; */
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.onlineNow {
+  width: 90%;
+  height: 30px;
+  /* border: 1px solid; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
+  border-radius: 10px;
+  /* display: flex; */
+  align-items: center;
+  color: var(--secondary-text-gray);
+}
+
+.dpContainer {
+  /* border: 1px solid; */
+  height: 70px;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+}
+.dpCircles {
+  width: 70px;
+  aspect-ratio: 1/1;
+  /* border: 1px solid; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dpCircles img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.pinnedMessage {
+  /* border: 1px solid; */
+  width: 90%;
+  height: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  color: var(--secondary-text-gray);
+}
+
+.contactContainer {
+  /* border: 1px solid; */
+  width: 90%;
+  height: 350px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.userNameDPContainer {
+  width: 100%;
+  height: 60px;
+  /* border: 1px solid; */
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+}
+.userDp {
+  /* border: 1px solid; */
+  width: 60px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.userDp img {
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.userNameContainer {
+  width: 70%;
+  height: 60px;
+  /* border: 1px solid; */
+  display: flex;
+  flex-direction: column;
+  /* gap: 2px; */
+  /* justify-content: space-evenly; */
+  align-items: flex-start;
+}
+.userName {
+  width: 100%;
+  height: 30px;
+  /* border: 1px solid; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.userName p {
+  color: var(--secondary-text-gray);
+}
+.previewMessage {
+  width: 100%;
+  height: 30px;
+  /* border: 1px solid; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.previewMessage p {
+  color: var(--secondary-text-gray);
+}
+
+/* Chats section */
+.chatsContainer {
+  height: auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 8px;
+  background-color: var(--white);
+}
+
+.userNameCallingContainer {
+  width: 95%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+.DpUserNameCotainer {
+  width: 60%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.DpContainer {
+  width: 60px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.DpContainer img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+.UserName {
+  width: 70%;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.UserName h4 {
+}
+.UserName p {
+  color: var(--secondary-text-gray);
+}
+.callingIconsContainer {
+  width: 40%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.messageContainer {
+  width: 95%;
+  height: 400px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1);
+  scroll-behavior: smooth;
+  border-top: var(--borderDivider);
+  background-color: var(--light-gray);
+  overflow-x: auto;
+  border-bottom: var(--borderDivider);
+}
+.leftSideMessageContainer {
+  width: 70%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-self: flex-start;
+  gap: 10px;
+  border-radius: 8px;
+  padding: 5px;
+  background-color: var(--white);
+}
+.rightMessageContainer {
+  width: 70%;
+  height: 70px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+  align-self: flex-end;
+  padding: 5px;
+  background-color: var(--white);
+  border-radius: 8px;
+}
+.dpNameContainer {
+  width: 40px;
+  aspect-ratio: 1/1;
+  display: flex;
+  border-radius: 50%;
+  align-self: center;
+  justify-self: center;
+}
+.dpNameContainer img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.textMessageContainer {
+  width: 80%;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.messageWrittingContainer {
+  width: 95%;
+  height: 70px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.messageWritting {
+  width: 100%;
+  max-width: 600px;
+  height: 50px;
+  border: 1px solid #ccc;
+  background-color: var(--white);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  gap: 10px;
+  box-sizing: border-box;
+}
+.messageWritting textarea {
+  flex: 1;
+  resize: none;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  outline: none;
+  height: 40px;
+  padding: 10px 0;
+}
+.senderNameContainer {
+  width: 90%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.senderNameContainer h4 {
+}
+.senderNameContainer p {
+  font-size: var(--content-size);
+  color: var(--secondary-text-gray);
+  font-weight: 600;
+}
+.senderText {
+  width: 90%;
+  height: auto;
+  background-color: var(--primary-blue);
+  border-radius: 5px;
+  padding: 5px;
+  align-self: flex-end;
+}
+.senderText h4 {
+  font-weight: normal;
+  color: var(--white);
+  font-weight: 500;
+}
+/* .emojSendDocumentContainer {
+  width: 20%;
+  height: 70px;
+  border: 1px solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+} */
+
+/* Contact Info section */
+.contactInfoContaner {
+  /* height: auto; */
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: var(--borderDivider);
+  gap: 10px;
+  padding: 10px;
+  justify-content: center;
+  background-color: var(--white);
+  border-radius: 8px;
+}
+.userInfoHeadingContainer {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: var(--borderDivider);
+}
+.userInfoHeadingContainer h3 {
+  color: var(--charcoal-black);
+}
+
+.userDpNameContainer {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.DpCircle {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+}
+.DpCircle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+}
+.userInfoContainer {
+  width: 90%;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.userDescriptionContainer {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.decriptionHeading {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.decriptionHeading h4 {
+  color: var(--secondary-text-gray);
+  font-weight: 500;
+}
+.Description {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: flex-end; */
+  text-align: justify;
+}
+.Description p {
+  color: var(--secondary-text-gray);
+}
+.copyMailIdNotifactionContainer {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.copyMailId {
+  width: 100%;
+  height: 20px;
+  /* border-radius: 5px; */
+  display: flex;
+  flex-direction: row-reverse;
+  /* gap: 10px; */
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--borderDivider);
+}
+.copyMailId p {
+  color: var(--primary-blue);
+}
+.Notification {
+  width: 100%;
+  height: 40px;
+  /* border-radius: 5px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--borderDivider);
+}
+.bellIconContainer {
+  width: 50%;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.bellIconContainer p {
+  color: var(--secondary-text-gray);
+}
+.toggleBtnContainer {
+  width: 20%;
+  height: 20px;
+  border: 1px solid;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+}
+.togglingCircle {
+  width: 45%;
+  border: 1px solid blue;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.mediaContainer {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mediaHeading {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.media {
+  width: 50%;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.media p {
+  color: var(--secondary-text-gray);
+}
+.media span {
+  color: var(--primary-blue);
+}
+.seaAll {
+  width: 50%;
+  height: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.seaAll p {
+  color: var(--secondary-text-gray);
+}
+.mediaPreviewContainer {
+  width: 100%;
+  height: 70px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+.previewBox {
+  width: 30%;
+  height: 60px;
+  border: 1px solid;
+  border-radius: 10px; /* gap: 10px; */
+}
