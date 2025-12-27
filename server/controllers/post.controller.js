@@ -1,5 +1,5 @@
 import postModel from "../models/post.model.js";
-
+import commentModel from "../models/comment.model.js";
 export async function createPost(req, res) {
   const { content, image } = req.body;
   const author = req.user._id;
@@ -67,4 +67,99 @@ export async function getPost(req, res) {
   } catch (error) {
     res.status(400).send("get post not working ");
   }
+}
+
+export async function updatePost(req, res) {
+  const alllowedFields = ["content", "image"];
+  const updatedPost = {};
+  const postId = req.params.id;
+  const userId = req.user.id;
+  try {
+    for (let key of alllowedFields) {
+      if (req.body[key] !== undefined) {
+        updatedPost[key] = req.body[key];
+      }
+    }
+    if (Object.keys(updatedPost).length === 0) {
+      return res.status(400).json({ message: "Nothing to update" });
+    }
+    // find post
+    const updatingPost = await postModel.findById(postId);
+    if (!updatingPost) {
+      return res.status(404).json({ message: "Post Not Found" });
+    }
+    // Owner Ship check
+    if (!updatingPost.author.equals(userId)) {
+      return res
+        .status(403)
+        .json({ message: "Unauthorised access you cannot update post" });
+    }
+
+    const updateDB = await postModel.findByIdAndUpdate(
+      postId,
+      { $set: updatedPost },
+      { new: true, runValidators: true }
+    );
+    res
+      .status(200)
+      .json({ message: "Post Updated", success: true, data: updateDB });
+  } catch (error) {
+    res.status(500).json({ message: "Server Error", error: error.message });
+  }
+}
+
+export async function deletePost(req, res) {
+  const postId = req.params.id;
+  const userId = req.user.id;
+  try {
+    // find post
+    const findPost = await postModel.findById(postId);
+    if (!findPost) {
+      return res.status(401).json({ message: "Post not found" });
+    }
+    if (!findPost.author.equals(userId)) {
+      return res.status(403).json({ message: "You are not authorised" });
+    }
+    await postModel.findByIdAndDelete(postId);
+
+    // Remove comments also after post deletion
+    await commentModel.deleteMany({ post: postId });
+    res
+      .status(200)
+      .json({ message: "Post deleted successfully", success: true });
+  } catch (error) {
+    return res.status(500).json({
+      message: "Post cannot be deleted",
+      error: error.message,
+    });
+  }
+}
+
+// like System
+
+export async function likePost(req, res) {
+  const postId = req.params.id;
+  const userId = req.user.id;
+  const findPost = await postModel.findById(postId);
+
+  // check if post is present
+  if (!findPost) {
+    return res.status(402).json({ message: "Post  not found" });
+  }
+
+  const isLiked = findPost.likes.some((id) => id.equals(userId));
+  const queryLike = isLiked
+    ? { $pull: { likes: userId } } //already liked remove the  like
+    : { $addToSet: { likes: userId } }; //if didnt liked it  add like
+
+  // update the postmodel after like or unlike
+  const updatePost = await postModel.findByIdAndUpdate(postId, queryLike, {
+    new: true,
+  });
+  res.status(200).json({
+    message: isLiked ? "Post UnLiked" : "Post Liked",
+    success: true,
+    likesCount: updatePost.likes.length,
+    likedata: queryLike,
+  });
 }

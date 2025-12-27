@@ -7,6 +7,7 @@ import routes from "./routes/index.route.js";
 import authUserRoutes from "./routes/auth.route.js";
 import userProfile from "./routes/users.route.js";
 import postRoute from "./routes/posts.route.js";
+import commentRoute from "./routes/comments.route.js"
 import cookieParser from "cookie-parser";
 import path from "path";
 // Change from {extended: true} to {extended: true}
@@ -28,6 +29,8 @@ app.use("/user", authUserRoutes);
 app.use("/profile", userProfile);
 
 app.use("/post", postRoute);
+
+app.use("/comments", commentRoute);
 
 app.listen(process.env.PORT);
 console.log("its running on port 5000");

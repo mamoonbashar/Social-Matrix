@@ -17,9 +17,7 @@ export async function isLoggedIn(req, res, next) {
     req.user = user;
     next();
   } catch (err) {
-    if (err) {
-      req.flash("error", "Token expired or invalid please login again");
-      res.redirect("/");
-    }
+    req.flash("error", "Token expired or invalid please login again",err.message);
+    res.redirect("/");
   }
 }

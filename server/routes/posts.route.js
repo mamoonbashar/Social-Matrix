@@ -2,8 +2,11 @@ import express from "express";
 //import { isLoggedIn } from "../middlewares/auth";
 import {
   createPost,
+  deletePost,
   getAllPosts,
   getPost,
+  likePost,
+  updatePost,
 } from "../controllers/post.controller.js";
 import { isLoggedIn } from "../middlewares/auth.js";
 const router = express.Router();
@@ -17,19 +20,20 @@ router.get("/:id/allPosts", getAllPosts);
 
 router.get("/posts/:id", getPost);
 
+// // owner check is needed
+router.patch("/posts/:id/updatePost", isLoggedIn, updatePost);
+
+
+// // owner check is needed
+ router.delete("/posts/:id", isLoggedIn, deletePost);
+
 // router.get("/posts/user/:userId", isLoggedIn, userPost);
-
-// // owner check is needed
-// router.patch("/posts/:id", isLoggedIn, validation, editPost);
-
-// // owner check is needed
-// router.delete("/posts/:id", isLoggedIn, deletePost);
 
 // <<<<<<<<<<<<<<<<<<*************>>>>>>>>>>>>>>>>>
 
 // LIKE SYSTEM ROUTES
 
-// router.post("/posts/:id/like", isLoggedIn, likePost);
+router.post("/posts/:id/like", isLoggedIn, likePost);
 
 // router.delete("/posts/:id/unlike", isLoggedIn, unlikePost);
 
