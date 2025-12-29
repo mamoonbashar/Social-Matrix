@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const taskSchema = mongoose.Schema(
   {
-    user: {
+    author: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },

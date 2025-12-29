@@ -3,7 +3,6 @@ import userModel from "../models/user.model.js";
 
 export async function isLoggedIn(req, res, next) {
   if (!req.cookies.token) {
-    req.flash("error", "login First");
     res.redirect("/");
   }
   try {
@@ -17,7 +16,6 @@ export async function isLoggedIn(req, res, next) {
     req.user = user;
     next();
   } catch (err) {
-    req.flash("error", "Token expired or invalid please login again",err.message);
     res.redirect("/");
   }
 }
