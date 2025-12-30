@@ -2,7 +2,6 @@ import bcrypt, { genSalt } from "bcrypt";
 import jwt from "jsonwebtoken";
 import userModel from "../models/user.model.js";
 import generateToken from "../utils/generateToken.js";
-import config from "config";
 
 export async function LoginUser(req, res) {
   try {
@@ -48,7 +47,7 @@ export async function registerUser(req, res) {
           });
           let token = generateToken(user);
           res.cookie("token", token);
-          res.redirect('/');
+          res.redirect("/");
           // return res.redirect("register", { success: true, error: null });
           // let token = generateToken(user);
           // res.cookie("token", token);
@@ -60,4 +59,13 @@ export async function registerUser(req, res) {
   } catch (err) {
     res.render("index", { success: false, error: err.message });
   }
+}
+
+export async function logout(req, res) {
+  res.clearCookie("token", {
+    path: "/",
+  });
+  res
+    .status(200)
+    .json({ message: "You are logged out Successfully", success: true });
 }

@@ -50,7 +50,7 @@ export async function getFollowing(req, res) {
       .findById(userId)
       .populate("following", "fullname")
       .select("-password");
-
+       
     const followingData = userFollower.following.map((following) => ({
       id: following._id,
       fullname: following.fullname,
