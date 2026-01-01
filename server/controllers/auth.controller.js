@@ -3,24 +3,39 @@ import jwt from "jsonwebtoken";
 import userModel from "../models/user.model.js";
 import generateToken from "../utils/generateToken.js";
 
+// Helper Fro Cookie
+const isProduction = process.env.NODE_ENV === "production";
+const cookieOptions = {
+  path: "/",
+  httpOnly: true,
+  secure: isProduction,
+  sameSite: "Lax",
+  maxAge: 24 * 60 * 60 * 1000,
+};
+
 export async function LoginUser(req, res) {
   try {
     let { email, password } = req.body;
     let user = await userModel.findOne({ email: email });
     if (!user) {
-      return res.send("Email or password is incorrect");
+      return res.status(401).json({ message: "User not Found" });
     }
-    bcrypt.compare(password, user.password, function (err, result) {
-      if (result) {
-        let token = generateToken(user);
-        res.cookie("token", token);
-        return res.redirect("/home");
-      } else {
-        return res.send("email or Password is incorecct");
-      }
-    });
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (isMatch) {
+      let token = generateToken(user);
+      res.cookie("token", token, cookieOptions);
+      res
+        .status(200)
+        .json({ message: "Logged in Successfully", success: true });
+    } else {
+      return res
+        .status(403)
+        .json({ message: "Email or Password is incorrect" });
+    }
   } catch (err) {
-    console.log(err.message);
+    return res
+      .status(500)
+      .json({ message: "Internal Server Error", Error: err.message });
   }
 }
 
@@ -34,38 +49,39 @@ export async function registerUser(req, res) {
         error: "User already exists",
       });
     }
-    bcrypt.genSalt(10, function (err, salt) {
-      bcrypt.hash(password, salt, async function (err, hash) {
-        if (err) {
-          return res.send(err.message);
-        } else {
-          let user = await userModel.create({
-            email,
-            password: hash,
-            contact,
-            fullname,
-          });
-          let token = generateToken(user);
-          res.cookie("token", token);
-          res.redirect("/");
-          // return res.redirect("register", { success: true, error: null });
-          // let token = generateToken(user);
-          // res.cookie("token", token);
-          // res.send("user created Succesfully");
-          // alert("user created");
-        }
-      });
+
+    const Salt = await bcrypt.genSalt(10);
+
+    const hashPassword = await bcrypt.hash(password, Salt);
+
+    let createUser = await userModel.create({
+      email,
+      password: hashPassword,
+      contact,
+      fullname,
     });
-  } catch (err) {
-    res.render("index", { success: false, error: err.message });
+    let token = generateToken(createUser);
+
+    res.cookie("token", token, cookieOptions);
+
+    return res.status(201).json({ message: "User Registered", success: true });
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: "Internal Server Error", error: error.message });
   }
 }
 
 export async function logout(req, res) {
-  res.clearCookie("token", {
-    path: "/",
-  });
-  res
-    .status(200)
-    .json({ message: "You are logged out Successfully", success: true });
+  try {
+    const { maxAge, ...clearCookie } = cookieOptions;
+    res.clearCookie("token", clearCookie);
+    res
+      .status(200)
+      .json({ message: "You are logged out Successfully", success: true });
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: "Internal Server Error", error: error.message });
+  }
 }
