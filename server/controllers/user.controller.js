@@ -1,6 +1,6 @@
 import { json } from "stream/consumers";
 import userModel from "../models/user.model.js";
-import { send } from "process";
+
 
 // Get userprofile  details following followees and name email
 // and checking user seeing it own profile or someone elses profile

@@ -1,9 +1,8 @@
-import bcrypt, { genSalt } from "bcrypt";
-import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
 import userModel from "../models/user.model.js";
 import generateToken from "../utils/generateToken.js";
 
-// Helper Fro Cookie
+// Helper For Cookie
 const isProduction = process.env.NODE_ENV === "production";
 const cookieOptions = {
   path: "/",

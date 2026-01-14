@@ -10,6 +10,7 @@ import postRoute from "./routes/posts.route.js";
 import commentRoute from "./routes/comments.route.js";
 import taskRoute from "./routes/tasks.route.js";
 import feedRoute from "./routes/feed.route.js"
+import searchRoute from "./routes/search.route.js"
 import cookieParser from "cookie-parser";
 import path from "path";
 // Change from {extended: true} to {extended: true}
@@ -37,6 +38,8 @@ app.use("/comments", commentRoute);
 app.use("/task", taskRoute);
 
 app.use("/feed",feedRoute);
+
+app.use("/search",searchRoute);
 
 app.listen(process.env.PORT);
 console.log("its running on port 5000");
