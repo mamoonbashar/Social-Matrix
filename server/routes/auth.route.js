@@ -5,8 +5,10 @@ import {
   logout,
   registerUser,
 } from "../controllers/auth.controller.js";
+import userValidation from "../middlewares/validation.js";
+import handleValidation from "../middlewares/handleValidation.js";
 
-router.post("/register", registerUser);
+router.post("/register", userValidation, handleValidation, registerUser);
 
 router.post("/login", LoginUser);
 
